@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 60px;
+  background-color: #0FADFF;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000!important;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.auth-links {
+  display: flex;
+  width: 120px;
+}
+
+.signup {
+  margin-left: 20px;
+}

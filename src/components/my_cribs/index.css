@@ -1,0 +1,49 @@
+.crib-card-container {
+  width: 100%;
+  margin-bottom: 75px;
+}
+
+.crib-pictures {
+  min-width: 100%;
+  display: flex;
+  overflow-x: auto;
+}
+
+.crib-pictures::-webkit-scrollbar {
+  display: none;
+}
+
+.crib-pic {
+  /* height: 500px; */
+  margin: 5px;
+}
+
+.crib-pic img {
+  height: 600px;
+}
+
+.crib-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.info-divider {
+  margin: 0 8px;
+}
+
+.add-crib-container {
+  width: 100%;
+  margin: 7px 0
+}
+
+.add-crib-container form {
+  display: flex;
+  justify-content: center;
+}
+
+.add-crib-container .ui.input {
+  width: 300px!important;
+  margin-right: 6px;
+}
