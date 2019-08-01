@@ -7,6 +7,7 @@ class Navbar extends React.Component {
     return (
       <NavbarView
         isLoggedIn={this.props.state.isLoggedIn}
+        currentPage={this.props.state.currentPage}
       />
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function cribCard({ crib }) {
+export default function cribCard({ crib, deleteCrib }) {
   const renderPics = () => {
     return crib.pictures.map(p => {
       return (
@@ -10,6 +10,7 @@ export default function cribCard({ crib }) {
       )
     });
   }
+
   return (
     <div className="crib-card-container">
       <section className="crib-pictures">
@@ -19,6 +20,11 @@ export default function cribCard({ crib }) {
         <div>{crib.name}</div>
         <div className="info-divider">|</div>
         <div>{Number(crib.price).toLocaleString('en-US', { style: 'currency', currency: 'USD' }).split('.')[0]}</div>
+      </div>
+      <div className="delete-crib">
+        <div className="delete-crib-link" onClick={() => deleteCrib(crib.id)}>
+          delete crib
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,6 @@
 }
 
 .crib-pic {
-  /* height: 500px; */
   margin: 5px;
 }
 
@@ -46,4 +45,19 @@
 .add-crib-container .ui.input {
   width: 300px!important;
   margin-right: 6px;
+}
+
+.delete-crib {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.delete-crib-link {
+  color: #e0e0e0;
+}
+
+.delete-crib-link:hover {
+  cursor: pointer;
+  color: red;
 }

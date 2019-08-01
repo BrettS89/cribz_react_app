@@ -3,10 +3,15 @@ import './index.css';
 import LoginView from './view';
 
 class Login extends React.Component {
+  componentDidMount() {
+    this.props.actions.setCurrentPage('login');
+    this.props.actions.setIsNotError();
+  }
+
   onLogin = e => {
     e.preventDefault();
     const credentials = {
-      username: e.target.email.value,
+      email: e.target.email.value,
       password: e.target.password.value,
     }
     e.target.email.value = '';

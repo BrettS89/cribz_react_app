@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as cribsActions from '../redux/actions/cribz';
+import ErrorModal from '../components/error_modal';
 import * as appActions from '../redux/actions/app';
-import MyCribs from '../components/my_cribs';
 
 function mapStateToProps(state) {
   return {
     state: {
-      myCribs: state.cribs.myCribs,
+      isError: state.app.isError,
     },
   };
 }
@@ -15,7 +14,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   const allActions = {
     ...appActions,
-    ...cribsActions,
   };
 
   return {
@@ -23,4 +21,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyCribs);
+export default connect(mapStateToProps, mapDispatchToProps)(ErrorModal);

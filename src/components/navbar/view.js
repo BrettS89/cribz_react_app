@@ -2,8 +2,7 @@ import React from 'react';
 
 export default function navbarView(props) {
   const renderLoginSignup = () => {
-    if (!props.isLoggedIn) {
-      console.log('in');
+    if (!props.isLoggedIn && props.currentPage !== 'mycribs') {
       return (
         <React.Fragment>
           <div className="auth-link">Login</div>
@@ -17,7 +16,7 @@ export default function navbarView(props) {
     <div className="navbar">
       <div className="auth-links"></div>
       <div className="nav-logo">
-        <i class="fas fa-chess-rook"></i> Cribz
+        <i className="fas fa-chess-rook"></i> Baller Cribz
       </div>
       <div className="auth-links">
         {renderLoginSignup()}

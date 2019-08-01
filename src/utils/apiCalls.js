@@ -3,7 +3,7 @@ import { URL } from '../config';
 function getToken() {
   const token = localStorage.getItem('token');
   if (!token) throw new Error('no auth token');
-  return `JWT ${token}`;
+  return `Bearer ${token}`;
 }
 
 export async function apiLogin(payload) {
@@ -14,8 +14,7 @@ export async function apiLogin(payload) {
     },
     body: JSON.stringify(payload),
   });
-  const response =  await res.json();
-  return response;
+  return await res.json();
 }
 
 export async function apiGetMyCribs() {
@@ -32,6 +31,19 @@ export async function apiGetMyCribs() {
 export async function apiAddCrib(payload) {
   const res = await fetch(`${URL}/crib`, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': getToken(),
+    },
+    body: payload,
+  });
+  return await res.json();
+}
+
+export async function apiDeleteCrib(payload) {
+  console.log(payload);
+  const res = await fetch(`${URL}/crib`, {
+    method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': getToken(),

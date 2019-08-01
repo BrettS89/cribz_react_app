@@ -5,6 +5,7 @@ function mapStateToProps(state) {
   return {
     state: {
       isLoggedIn: state.app.isLoggedIn,
+      currentPage: state.app.currentPage,
     },
   };
 }

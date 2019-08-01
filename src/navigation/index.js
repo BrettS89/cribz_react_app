@@ -5,6 +5,7 @@ import Navbar from '../containers/navbar';
 import Login from '../containers/login';
 import MyCribs from '../containers/my_cribs';
 import Spinner from '../components/Spinner';
+import ErrorModal from '../containers/error_modal';
 
 export default () => {
   return (
@@ -15,9 +16,10 @@ export default () => {
           <Switch>
             <Route path="/mycribs" component={MyCribs} />
             <Route path="/" component={Login} />
-          </Switch>
-          <Spinner />
+          </Switch>      
         </div>
+        <Spinner />
+        <ErrorModal />
       </React.Fragment>
     </BrowserRouter>
   );

@@ -8,7 +8,7 @@ import { apiLogin } from '../../utils/apiCalls';
 
 export default [
   loginWatcher,
-  // logoutWatcher,
+  logoutWatcher,
 ];
 
 function * loginWatcher() {
@@ -23,6 +23,7 @@ function * loginHandler({ payload: { credentials, navigate } }) {
   try {
     yield put(appActions.isLoading());
     const { access_token } = yield call(apiLogin, credentials);
+    if (!access_token) throw new Error('login error');
     localStorage.setItem('token', access_token);
     yield put(appActions.isLoggedIn());
     navigate();
